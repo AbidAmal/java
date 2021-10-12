@@ -11,7 +11,7 @@ pipeline {
             
             steps {
                 git branch: 'main', credentialsId: 'myGithub', url: 'https://github.com/AbidAmal/java.git'
-               bat '.\mvn clean compiled'
+               bat './mvn clean compiled'
             }
         }
 
