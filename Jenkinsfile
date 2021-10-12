@@ -2,17 +2,16 @@ pipeline {
 
    agent any
 
-    options{
+   /* options{
             timeout(unit:'SECONDS', time:5)
-           }
+           }*/
      stages {
   
-        stage('Test') {
+        stage('Build') {
             
             steps {
-                echo 'Testing'
-             
                 git branch: 'main', credentialsId: 'myGithub', url: 'https://github.com/AbidAmal/java.git'
+               bat '.\mvn clean compiled'
             }
         }
 
